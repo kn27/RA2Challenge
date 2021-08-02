@@ -1,0 +1,17 @@
+[2020-05-14 06:03:08,771][INFO]   INPUT:/output/test, OUTPUT:/output/test/erosion_all, PRETRAIN_MODEL:./pretrained_models/saved_model_30_epochs_erosion_from_synthetic_to_full.txt
+[2020-05-14 06:03:08,771][INFO]   Size of dataset: 4
+[2020-05-14 06:03:08,771][INFO]   Number of joints: 45
+[2020-05-14 06:03:12,221][INFO]   Device: cuda
+[2020-05-14 06:03:12,222][INFO]   Inference on image :1
+[2020-05-14 06:03:16,112][INFO]   Apply filter at threshold = 0
+[2020-05-14 06:03:16,187][WARNING]   Number of underlabel images: 0
+[2020-05-14 06:03:16,187][WARNING]   Number of underlabel joints: 0
+[2020-05-14 06:03:16,188][WARNING]   Underlabels: {}
+[2020-05-14 06:03:16,264][INFO]   Wrote 16 joint images for UAB001-LH
+[2020-05-14 06:03:16,339][INFO]   Wrote joint images detected from 1 images
+[2020-05-14 06:03:16,339][INFO]   Wrote 16 joint images for UAB001-RH
+[2020-05-14 06:03:16,425][INFO]   Wrote 16 joint images for UAB002-LH
+[2020-05-14 06:03:16,514][INFO]   Wrote 16 joint images for UAB002-RH
+[2020-05-14 06:03:16,514][INFO]    Wrote 64 joint images for 4
+[2020-05-14 06:03:16,514][INFO]   Complete!
+[2020-05-14 06:03:16,524][INFO]   Copied 24 feet joints from narrowing to erosion

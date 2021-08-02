@@ -1,0 +1,34 @@
+[2020-05-14 06:03:34,414][INFO]   EROSION_SCORE:/output/erosion_score.csv, NARROWING_SCORE:/output/narrowing_score.csv, FINAL_OUTPUT:/output/predictions.csv
+[2020-05-14 06:03:34,440][INFO]   Shape of erosion:(2, 45)
+[2020-05-14 06:03:34,441][INFO]   Shape of narrowing:(2, 43)
+[2020-05-14 06:03:34,455][INFO]   Wrote final output to :/output/predictions.csv
+[2020-05-14 06:03:34,455][INFO]   Shape of all:(2, 90)
+[2020-05-14 06:03:34,455][INFO]   Index(['Patient_ID', 'Overall_Tol', 'Overall_erosion', 'Overall_narrowing',
+       'LH_mcp_E__ip', 'LH_pip_E__2', 'LH_pip_E__3', 'LH_pip_E__4',
+       'LH_pip_E__5', 'LH_mcp_E__1', 'LH_mcp_E__2', 'LH_mcp_E__3',
+       'LH_mcp_E__4', 'LH_mcp_E__5', 'LH_wrist_E__mc1', 'LH_wrist_E__mul',
+       'LH_wrist_E__nav', 'LH_wrist_E__lunate', 'LH_wrist_E__radius',
+       'LH_wrist_E__ulna', 'RH_mcp_E__ip', 'RH_pip_E__2', 'RH_pip_E__3',
+       'RH_pip_E__4', 'RH_pip_E__5', 'RH_mcp_E__1', 'RH_mcp_E__2',
+       'RH_mcp_E__3', 'RH_mcp_E__4', 'RH_mcp_E__5', 'RH_wrist_E__mc1',
+       'RH_wrist_E__mul', 'RH_wrist_E__nav', 'RH_wrist_E__lunate',
+       'RH_wrist_E__radius', 'RH_wrist_E__ulna', 'LF_mtp_E__ip', 'LF_mtp_E__1',
+       'LF_mtp_E__2', 'LF_mtp_E__3', 'LF_mtp_E__4', 'LF_mtp_E__5',
+       'RF_mtp_E__ip', 'RF_mtp_E__1', 'RF_mtp_E__2', 'RF_mtp_E__3',
+       'RF_mtp_E__4', 'RF_mtp_E__5', 'LH_pip_J__2', 'LH_pip_J__3',
+       'LH_pip_J__4', 'LH_pip_J__5', 'LH_mcp_J__1', 'LH_mcp_J__2',
+       'LH_mcp_J__3', 'LH_mcp_J__4', 'LH_mcp_J__5', 'LH_wrist_J__cmc3',
+       'LH_wrist_J__cmc4', 'LH_wrist_J__cmc5', 'LH_wrist_J__mna',
+       'LH_wrist_J__capnlun', 'LH_wrist_J__radcar', 'RH_pip_J__2',
+       'RH_pip_J__3', 'RH_pip_J__4', 'RH_pip_J__5', 'RH_mcp_J__1',
+       'RH_mcp_J__2', 'RH_mcp_J__3', 'RH_mcp_J__4', 'RH_mcp_J__5',
+       'RH_wrist_J__cmc3', 'RH_wrist_J__cmc4', 'RH_wrist_J__cmc5',
+       'RH_wrist_J__mna', 'RH_wrist_J__capnlun', 'RH_wrist_J__radcar',
+       'RF_mtp_J__ip', 'LF_mtp_J__1', 'LF_mtp_J__2', 'LF_mtp_J__3',
+       'LF_mtp_J__4', 'LF_mtp_J__5', 'LF_mtp_J__ip', 'RF_mtp_J__1',
+       'RF_mtp_J__2', 'RF_mtp_J__3', 'RF_mtp_J__4', 'RF_mtp_J__5'],
+      dtype='object')
+[2020-05-14 06:03:34,457][INFO]   0    UAB001
+1    UAB002
+Name: Patient_ID, dtype: object
+[2020-05-14 06:03:34,461][WARNING]   Number of missing per joint: {}

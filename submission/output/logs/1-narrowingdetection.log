@@ -1,0 +1,19 @@
+[2020-05-14 06:02:57,886][INFO]   INPUT:/output/test, OUTPUT:/output/test/narrowing_all, PRETRAIN_MODEL:./pretrained_models/saved_model_15_epochs_narrowing_full.txt
+[2020-05-14 06:02:57,886][INFO]   Size of dataset: 8
+[2020-05-14 06:02:57,886][INFO]   Number of joints: 43
+[2020-05-14 06:03:00,861][INFO]   Device: cuda
+[2020-05-14 06:03:00,872][INFO]   Inference on image :1
+[2020-05-14 06:03:05,041][INFO]   Apply filter at threshold = 0
+[2020-05-14 06:03:05,051][WARNING]   Number of underlabel images: 0
+[2020-05-14 06:03:05,051][WARNING]   Number of underlabel joints: 0
+[2020-05-14 06:03:05,051][WARNING]   Underlabels: {}
+[2020-05-14 06:03:05,117][INFO]   Wrote 6 joint images for UAB001-LF
+[2020-05-14 06:03:05,192][INFO]   Wrote 15 joint images for UAB001-LH
+[2020-05-14 06:03:05,234][INFO]   Wrote 6 joint images for UAB001-RF
+[2020-05-14 06:03:05,299][INFO]   Wrote 15 joint images for UAB001-RH
+[2020-05-14 06:03:05,333][INFO]   Wrote 6 joint images for UAB002-LF
+[2020-05-14 06:03:05,405][INFO]   Wrote 15 joint images for UAB002-LH
+[2020-05-14 06:03:05,441][INFO]   Wrote 6 joint images for UAB002-RF
+[2020-05-14 06:03:05,519][INFO]   Wrote 15 joint images for UAB002-RH
+[2020-05-14 06:03:05,519][INFO]    Wrote 84 joint images for 8
+[2020-05-14 06:03:05,519][INFO]   Complete!

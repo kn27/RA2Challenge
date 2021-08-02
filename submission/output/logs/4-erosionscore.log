@@ -1,0 +1,5 @@
+[2020-05-14 06:03:27,498][INFO]   INPUT:/output/test/erosion_all, OUTPUT:/output/erosion_score.csv, PRETRAIN_MODEL:./pretrained_models/narrow_score_75.pth
+[2020-05-14 06:03:27,503][INFO]   Length of dataset: 1
+[2020-05-14 06:03:29,437][INFO]   Inference on batch 0
+[2020-05-14 06:03:32,211][WARNING]   Number of missing per joint: {}
+[2020-05-14 06:03:32,249][INFO]   Wrote erosion output to :/output/erosion_score.csv!

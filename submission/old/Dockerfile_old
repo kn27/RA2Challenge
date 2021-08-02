@@ -1,0 +1,69 @@
+# Get a good base docker image, pin it to a specific SHA digest to ensure reproducibility 
+#FROM rocker/r-base@sha256:ec224c21eff00e6cd8016419fae2886596c76e80fb1ae042e657b3cd08ba30d8
+FROM python:3.7
+# Install dependencies, this example is to use tensorflow in R via the keras library
+#RUN add-apt-repository universe
+RUN apt-get update -y 
+RUN apt-get install -y libpython3-dev
+RUN apt-get install -y python3-pip 
+RUN apt-get install libjpeg-dev
+RUN pip3 install virtualenv Pillow pandas
+RUN apt-get install -y python3-venv
+
+RUN pip3 install piexif
+#RUN pip install PIL logging os shutil random
+RUN pip3 install torch==1.5.0+cu101 torchvision==0.6.0+cu101 -f https://download.pytorch.org/whl/torch_stable.html
+RUN pip3 install matplotlib
+RUN pip3 install xmltodict tqdm
+#RUN R -e "install.packages(c('tidyverse','keras'), dependencies=TRUE, repos='http://cran.rstudio.com/')"
+##RUN R -e 'keras::install_keras(tensorflow = "2.2.0rc2-gpu")'
+#RUN echo "Sys.setenv(RETICULATE_PYTHON = '/root/.virtualenvs/r-reticulate/bin/python')" > ~/.Rprofile
+
+# Required: Create /train /test and /output directories 
+RUN mkdir /usr/local/bin/train
+RUN mkdir /usr/local/bin/test
+RUN mkdir /usr/local/bin/output
+RUN mkdir /usr/local/bin/logs
+RUN mkdir /usr/local/bin/test_joints
+RUN mkdir /usr/local/bin/test_joints/narrowing_all
+RUN mkdir /usr/local/bin/test_joints/erosion_all
+RUN mkdir /usr/local/bin/test_dataset
+#RUN mkdir /usr/local/bin/test_dataset
+
+# Required for GPU: run.sh defines PATHs to find GPU drivers, see run.sh for specific commands
+COPY run.sh /run.sh
+COPY training.csv /usr/local/bin/training.csv
+COPY model.py /usr/local/bin/model.py
+COPY data.py /usr/local/bin/data.py
+COPY preprocessing.py /usr/local/bin/preprocessing.py
+COPY 0-Preprocessing.py /usr/local/bin/0-Preprocessing.py
+COPY 1-NarrowingDetection.py /usr/local/bin/1-NarrowingDetection.py
+COPY 2-ErosionDetection.py /usr/local/bin/2-ErosionDetection.py
+COPY 3-NarrowingScore.py /usr/local/bin/3-NarrowingScore.py
+COPY 4a-CopyJoint.py /usr/local/bin/4a-CopyJoint.py
+COPY 4-ErosionScore.py /usr/local/bin/4-ErosionScore.py
+COPY 5-Final.py /usr/local/bin/5-Final.py
+COPY pretrained_models usr/local/bin/pretrained_models
+COPY train usr/local/bin/train
+COPY utils usr/local/bin/utils
+COPY models usr/local/bin/models
+
+# Required: a model file. 
+#COPY model.R /usr/local/bin/model.R
+
+# Make model and runfiles executable 
+RUN chmod 775 /usr/local/bin/0-Preprocessing.py
+RUN chmod 775 /usr/local/bin/1-NarrowingDetection.py
+RUN chmod 775 /usr/local/bin/2-ErosionDetection.py
+RUN chmod 775 /usr/local/bin/3-NarrowingScore.py
+RUN chmod 775 /usr/local/bin/4a-CopyJoint.py
+RUN chmod 775 /usr/local/bin/4-ErosionScore.py
+RUN chmod 775 /usr/local/bin/5-Final.py
+RUN chmod 775 /run.sh
+
+# This is for the virtualenv defined above, if not using a virtualenv, this is not necessary
+RUN chmod 755 /root #to make virtualenv accessible to singularity user
+
+# Required: define an entrypoint. run.sh will run the model for us, but in a different configuration
+# you could simply call the model file directly as an entrypoint 
+ENTRYPOINT ["/bin/bash", "/run.sh"]
